@@ -32,17 +32,58 @@ const posts = [
 
 const likeCount = document.getElementById('like-count');
 const likeButton = document.getElementById('like-button');
+const post = document.getElementById('post')
 
 
-let likeTotal = posts[0].likes;
 
-likeCount.innerHTML = `
-    <strong>${likeTotal} likes</strong>
-`
 
-likeButton.addEventListener('dblclick', () => {
-    likeTotal += 1;
-    likeCount.innerHTML = `
-        <strong> ${likeTotal} likes </strong>
-    `
-})
+const renderPost = () => {
+    for (let i = 0; i < posts.length; i++) {
+        // console.log(posts[i])
+
+        post.innerHTML += `
+        
+        <article  class="post-title" >
+            <img class="user-avatar"  src="${posts[i].avatar}" >
+            <div class="user-info">
+                <h3 class="user-full-name">${posts[i].name}</h3>
+                <p class="user-location">${posts[i].location}</p>
+            </div>
+        </article>
+
+         <article class="post-content">
+                    <img class="post-image" src="${posts[i].post}" alt="">
+                </article>
+
+             <article class="post-interaction">
+                    <img id="like-button" class="icon-image" src="./images/icon-heart.png" alt="Like button">
+                    <img class="icon-image" src="./images/icon-comment.png" alt="Comment button">
+                    <img class="icon-image" src="./images/icon-dm.png" alt="Share button">
+                </article>
+
+                <article id="like-count" class="post-info">
+                 <strong> ${posts[i].likes} likes</strong>
+                </article>
+
+                <article class="post-description">
+                    <p>
+                        <strong>${posts[i].username}</strong>
+                        ${posts[i].comment}
+                    </p>
+                </article>
+        `
+
+    }
+}
+
+
+// let likeTotal = posts[0].likes;
+
+// likeButton.addEventListener('dblclick', () => {
+//     likeTotal += 1;
+//     likeCount.innerHTML = `
+//         <strong> ${likeTotal} likes </strong>
+//     `
+// })
+
+renderPost();

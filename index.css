@@ -27,9 +27,11 @@ body {
 }
 
 header {
-  width: 100%;
+  width: 375px;
   height: 67px;
   border-bottom: 1px solid #ccc;
+  margin: 0 auto;
+  background: #fff;
 }
 
 .post-title {
