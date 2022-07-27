@@ -32,7 +32,7 @@ const posts = [
 ];
 
 for (let i = 0; i < posts.length; i++) {
-    post.innerHTML += `
+    document.getElementById('post').innerHTML += `
         <section class="post-card">
 
             <article  class="post-title" >
@@ -54,7 +54,7 @@ for (let i = 0; i < posts.length; i++) {
             </article>
 
             <article id="like-count" class="post-info">
-                <strong> ${posts[i].likes} likes</strong>
+                <strong id="like-number" > ${posts[i].likes} likes</strong>
             </article>
 
             <article class="post-description">
@@ -67,6 +67,9 @@ for (let i = 0; i < posts.length; i++) {
          </section>
         `;
 };
+
+
+
 
 
 
